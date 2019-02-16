@@ -1,0 +1,61 @@
+/* Everything done for transaction 1 on M4 */
+/* Had to insert a new employee, and another row for userId's for that employee */
+
+insert into Employee values('310000000000', 'Peter', 'Pan', '3045 Washington st.', '602-542-4585', 'Wendy', '602-657-2981', 'Parent', 'T', 12.00);
+insert into UserIDs values('310000000000', '567281356720', 'CaptainCookLoser', '6-Dec-16', NULL);
+
+/* Had to alter the employee table to include an activity status column with the default value of active */
+
+ALTER TABLE employee
+	ADD ActivityStatus varchar(8) NOT NULL
+		DEFAULT('Active');
+
+
+
+
+
+
+/*	1. When an employee has left the company, retire their userID and password so that they can no longer 
+	access company information and delete or flag the employeeas inactive.					*/
+
+Begin transaction;
+
+Update Employee
+	Set ActivityStatus = 'Inactive'
+		Where EmployeeId = '310000000000';
+
+Update UserIds
+	set RetiredOnDate = getdate()
+		Where EmployeeId = '310000000000';
+
+select *
+	from userids;
+
+select *
+	from employee;
+
+Rollback;
+Commit;
+
+
+
+
+
+
+
+/* 	2. A new supplier is added to the database. Include all parts (at least 3) that can be supplied by the new supplier.	*/
+
+BEGIN TRANSACTION;
+
+Insert into Suppliers values ('000000000031','Painting Pete','447 E Elm Ave','Sioux Falls','SD','57101','6053392000','Peter Piper','www.paintpete.com');
+
+Insert into Parts values('15970','Paint / Tools / Supplies','Paint','Painting Pete','Petes Powerful Tape','60yard Blue Painter Tape','000000000031','95','No Adhesive Residue','50','80','6.29');
+Insert into Parts values('3977a','Paint / Tools / Supplies','Paint','Painting Pete','EZ Paint Roller 3.0','9inch Farbric Paint Roller Cover','000000000031','22','','10','15','10.00');
+Insert into Parts values('3977b','Paint / Tools / Supplies','Paint','Painting Pete','EZ Paint 3.0','9inch Paint Roller Frame','000000000031','45','Rubber Grip','10','15','12.99');
+Insert into Parts values('tp425','Paint / Tools / Supplies','Paint','Painting Pete','Petes Premium Paint Brush','6inch Heavy Duty Paint Brush','000000000031','30','Easy to clean bristles','5','10','22.99');
+
+Select * From Suppliers;
+	Select * From Parts;
+
+ROLLBACK;
+COMMIT;

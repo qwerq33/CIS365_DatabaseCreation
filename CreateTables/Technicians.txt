@@ -1,0 +1,30 @@
+create table Technicians(
+
+TechniciansID		char(12),	
+TradeSpecialty		varchar(25)	NOT NULL,
+CertificateNumber	varchar(25)	NOT NULL,
+DateOfCertRenewal	date		NOT NULL,
+YearsOfExperience	varchar(2)	NOT NULL,
+Primary Key (TechniciansID),
+Constraint FK_TechID_EmpID,
+Foreign Key (TechniciansID) REFERENCES Employee(EmployeeID)
+				ON DELETE CASCADE);
+
+insert into Technicians values('160000000000', 'Electrician', '1230', '12-Aug-19', '10');
+insert into Technicians values('170000000000', 'Electrician', '1231', '27-Jun-19', '1');
+insert into Technicians values('180000000000', 'Maintenance', '1232', '30-Dec-19', '2');
+insert into Technicians values('190000000000', 'Plumber', '1233', '1-Jan-20', '3');
+insert into Technicians values('200000000000', 'Plumber', '1234', '5-Feb-20', '4');
+insert into Technicians values('210000000000', 'AC Technician', '1235', '4-Feb-20', '5');
+insert into Technicians values('220000000000', 'AC Technician', '1236', '20-Jun-20', '6');
+insert into Technicians values('230000000000', 'Painter', '1237',  '15-Aug-20', '7');
+insert into Technicians values('240000000000', 'Painter', '1238', '12-Jul-19', '8');
+insert into Technicians values('250000000000', 'Roofing', '1239', '10-Aug-19', '9');
+insert into Technicians values('260000000000', 'Roofing', '1240', '26-Dec-18', '2');
+insert into Technicians values('270000000000', 'Construction', '1241', '8-May-19', '4');
+insert into Technicians values('280000000000', 'Construction', '1242', '2-Jun-19', '5');
+insert into Technicians values('290000000000', 'Welder', '1243', '18-Aug-20', '3');
+insert into Technicians values('300000000000', 'Welder', '1244', '22-Jun-20', '7');
+
+
+

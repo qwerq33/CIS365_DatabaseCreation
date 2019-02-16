@@ -1,0 +1,77 @@
+create table AccidentReport(
+
+EmployeeID		char(12)	NOT NULL,	
+DateOfOccurance		date		NOT NULL,
+AddressOfAccident	varchar(50)	NOT NULL,
+TypeOfAccident		varchar(50)	NOT NULL,
+WorkSuspensionDate	date		NOT NULL,
+WorkResumeDate		date		NOT NULL,
+WorkOrderNumber		char(15), 
+Status			varchar(9)	NOT NULL,
+Primary Key (EmployeeID, DateOfOccurance, AddressOfAccident),
+Foreign Key (WorkOrderNumber) REFERENCES WorkOrders(WorkOrderNumber));
+
+insert into AccidentReport values('010000000000', '10-May-17', '9434 S. Oxford Lane', 'Traffic', '10-May-17', '15-May-17', NULL, 'Emergency');
+insert into AccidentReport values('020000000000', '1-Jun-17', '320 Kingston St.', 'Medical', '1-Jun-17', '4-Jun-17', NULL, 'Major');
+insert into AccidentReport values('030000000000', '2-Jul-17', '124 Leatherwood Court', 'Traffic', '2-Jul-17', '6-Jul-17', NULL, 'Emergency');
+insert into AccidentReport values('040000000000', '3-Aug-17', '992 Whitemarsh Street',  'Medical', '3-Aug-17', '5-Aug-17', NULL, 'Minor');
+insert into AccidentReport values('050000000000', '4-May-17', '698 Greystone Street', 'Medical', '4-May-17', '8-May-17', NULL, 'Major');
+insert into AccidentReport values('060000000000', '5-Jun-17', '78 Holly St.', 'Medical', '5-Jun-17', '10-Jun-17', NULL, 'Major');
+insert into AccidentReport values('070000000000', '6-Jul-17', '418 North Bury Street', 'Traffic', '6-Jul-17', '9-Jul-17', NULL, 'Emergency');
+insert into AccidentReport values('080000000000', '7-May-17', '94 Fairground Dr.', 'Medical', '7-May-17', '14-May-17', NULL, 'Emergency');
+insert into AccidentReport values('090000000000', '8-Aug-17', '7 Saxton St.', 'Traffic', '8-Aug-17', '13-Aug-17', NULL, 'Major');
+insert into AccidentReport values('100000000000', '9-Aug-17', '9240 Dunbar Ave.', 'Medical', '9-Aug-17', '15-Aug-17', NULL, 'Minor');
+insert into AccidentReport values('110000000000', '10-May-17', '770 Wayne Lane', 'Traffic', '10-May-17', '19-May-17', NULL, 'Emergency');
+insert into AccidentReport values('120000000000', '11-Jun-17', '7494 Ridge St.', 'Medical', '11-Jun-17', '16-Jun-17', NULL, 'Minor');
+insert into AccidentReport values('130000000000', '12-Jul-17', '7350 Union St.', 'Traffic', '12-Jul-17', '18-Jul-17', NULL, 'Major');
+insert into AccidentReport values('140000000000', '13-Jul-17', '7746 Marconi Dr.', 'Medical', '13-Jul-17', '15-Jul-17', NULL, 'Emergency');
+insert into AccidentReport values('150000000000', '14-Jun-17', '45 Airport Road', 'Traffic', '14-Jun-17', '17-Jun-17', NULL, 'Major');
+
+insert into AccidentReport values('010000000000', '15-May-18', '9434 S. Oxford Lane', 'Medical', '15-May-18', '18-May-18', NULL, 'Major');
+insert into AccidentReport values('020000000000', '16-May-18', '320 Kingston St.', 'Traffic', '16-May-18', '20-May-18', NULL, 'Major');
+insert into AccidentReport values('030000000000', '17-May-18', '124 Leatherwood Court', 'Medical', '17-May-18', '22-May-18', NULL,'Emergency');
+insert into AccidentReport values('040000000000', '18-May-18', '92 Whitemarsh Street', 'Traffic', '18-May-18', '23-May-18', NULL, 'Minor');
+insert into AccidentReport values('050000000000', '19-Aug-18', '698 Greystone Street', 'Medical', '19-Aug-18', '22-Aug-18', NULL, 'Minor');
+insert into AccidentReport values('060000000000', '20-Aug-18', '78 Holly St.', 'Traffic', '20-Aug-18', '25-Aug-18', NULL, 'Major');
+insert into AccidentReport values('070000000000', '21-Jun-18', '418 North Bury Street', 'Medical', '21-Jun-18', '26-Jun-18', NULL, 'Emergency');
+insert into AccidentReport values('080000000000', '22-Jan-18', '94 Fairground Dr.', 'Traffic', '22-Jan-18', '25-Jan-18', NULL, 'Minor');
+insert into AccidentReport values('090000000000', '23-Feb-18', '7 Saxton St.', 'Medical', '23-Feb-18', '25-Feb-18', NULL, 'Major');
+insert into AccidentReport values('100000000000', '24-May-18', '9240 Dunbar Ave.', 'Traffic', '24-May-18', '29-May-18', NULL, 'Emergency');
+insert into AccidentReport values('110000000000', '25-Jun-18', '770 Wayne Lane', 'Medical', '25-Jun-18', '27-Jun-18', NULL, 'Minor');
+insert into AccidentReport values('120000000000', '15-Jun-18', '7494 Ridge St.', 'Traffic', '15-Jun-18', '17-Jun-18', NULL, 'Minor');
+insert into AccidentReport values('130000000000', '10-Jun-18', '7350 Union St.', 'Traffic', '10-Jun-18', '18-Jun-18', NULL, 'Emergency');
+insert into AccidentReport values('140000000000', '26-Jul-18', '7746 Marconi Dr.', 'Medical', '26-Jul-18', '27-Jul-18', NULL, 'Major');
+insert into AccidentReport values('150000000000', '4-Aug-18', '45 Airport Road', 'Medical', '4-Aug-18', '7-Aug-18', NULL, 'Major');
+
+insert into AccidentReport values('160000000000', '15-Jun-18', '4905 Jefferson St', 'Burn', '15-Jun-18', '19-Jun-18', '123627121246099', 'Emergency');
+insert into AccidentReport values('170000000000', '5-Mar-18', '4244 Garfield st', 'Medical', '5-Mar-18', '7-Mar-18', '123665112614899', 'Major');
+insert into AccidentReport values('180000000000', '14-Oct-18', '421 Jordan st', 'Traffic', '15-Oct-18', '20-Oct-18', '123619082679699', 'Emergency');
+insert into AccidentReport values('190000000000', '6-Jul-18', '487 Jacksonville lane',  'Medical', '6-Jul-18', '7-Jul-18', '123629051926699', 'Minor');
+insert into AccidentReport values('200000000000', '10-Jul-18', '2487 Pierce Dr.', 'Burn', '10-Jul-18', '13-Jul-18', '123630091411099', 'Major');
+insert into AccidentReport values('210000000000', '26-Oct-18', '79 Tory Lane', 'Fall from ladder', '26-Oct-18', '29-Oct-18', '123611071407399', 'Major');
+insert into AccidentReport values('220000000000', '26-Aug-18', '4876 Central', 'Traffic', '26-Aug-18', '29-Aug-18', '123632042587499', 'Emergency');
+insert into AccidentReport values('230000000000', '26-Oct-18', '4738 Fair Dr.', 'Medical', '26-Oct-18', '30-Oct-18', '123640122812599', 'Emergency');
+insert into AccidentReport values('240000000000', '28-Jan-18', '856 Porter St', 'Fall from rooftop', '28-Jan-18', '29-Jan-18', '123601110528899', 'Major');
+insert into AccidentReport values('250000000000', '23-Jan-18', '6217 Berry Lane', 'Medical', '23-Jan-18', '24-Jan-18', '123688022840399', 'Minor');
+insert into AccidentReport values('260000000000', '5-May-18', '546 Roosevelt St', 'Fall from rooftop', '5-May-18', '10-May-18', '123648060491299', 'Emergency');
+insert into AccidentReport values('270000000000', '30-May-18', '4530 E Filmore St', 'Fall from ladder', '30-May-18', '1-Jun-18', '123649091003999', 'Minor');
+insert into AccidentReport values('280000000000', '5-Nov-18', '3526 W Mcdowell Rd', 'Traffic', '5-Nov-18', '9-Nov-18', '123669111948099', 'Major');
+insert into AccidentReport values('290000000000', '10-Nov-18', '5532 CamelBack Rd', 'Medical', '10-Nov-18', '19-Nov-18', '123639111636999', 'Emergency');
+insert into AccidentReport values('300000000000', '12-Jan-18', '5835 ThunderBird St', 'Traffic', '12-Jan-18', '16-Jan-18', '123692022732399', 'Major');
+
+insert into AccidentReport values('160000000000', '12-Mar-17', '4905 Jefferson St', 'Medical', '12-Mar-17', '17-Mar-17', '123644091261299', 'Major');
+insert into AccidentReport values('170000000000', '16-Feb-17', '4244 Garfield st', 'Burn', '16-Feb-17', '19-Feb-17', '123645010470099', 'Major');
+insert into AccidentReport values('180000000000', '20-Sep-17', '421 Jordan st', 'Medical', '20-Sep-17', '28-Sep-17', '123679040984499','Emergency');
+insert into AccidentReport values('190000000000', '10-Jun-17', '487 Jacksonville lane', 'Traffic', '10-Jun-17', '11-Jun-17', '123698101556399', 'Minor');
+insert into AccidentReport values('200000000000', '2-Feb-17', '2487 Pierce Dr.', 'Injury', '2-Feb-17', '2-Feb-17', '123621060330599', 'Minor');
+insert into AccidentReport values('210000000000', '17-Feb-17', '79 Tory Lane', 'Traffic', '17-Feb-17', '24-Feb-17', '123625082450899', 'Major');
+insert into AccidentReport values('220000000000', '1-Nov-17', '4876 Central', 'Burn', '1-Nov-17', '8-Nov-17', '123634110997899', 'Emergency');
+insert into AccidentReport values('230000000000', '8-Nov-17', '4738 Fair Dr.', 'Fall from rooftop', '8-Nov-17', '8-Nov-17', '123694052199499', 'Minor');
+insert into AccidentReport values('240000000000', '8-Mar-17', '856 Porter St', 'Medical', '8-Mar-17', '10-Mar-17', '123648021727999', 'Major');
+insert into AccidentReport values('250000000000', '7-Nov-17', '6217 Berry Lane', 'Fall from ladder', '7-Nov-17', '7-Nov-17', '123694022604999', 'Emergency');
+insert into AccidentReport values('260000000000', '25-Jan-17', '546 Roosevelt St', 'Medical', '25-Jan-17', '25-Jan-17', '123676021924699', 'Minor');
+insert into AccidentReport values('270000000000', '5-Oct-17', '4530 E Filmore St', 'Burn', '5-Oct-17', '6-Oct-17', '123657062326599', 'Minor');
+insert into AccidentReport values('280000000000', '14-Oct-17', '3526 W Mcdowell Rd', 'Burn', '14-Oct-17', '18-Oct-17', '123648063066699', 'Emergency');
+insert into AccidentReport values('290000000000', '12-Nov-17', '5532 CamelBack Rd', 'Medical', '12-Nov-17', '15-Nov-17', '123603102151399', 'Major');
+insert into AccidentReport values('300000000000', '20-Mar-17', '5835 ThunderBird St', 'Fall from rooftop', '20-Mar-17', '20-Mar-17', '123643090980399', 'Major');
+

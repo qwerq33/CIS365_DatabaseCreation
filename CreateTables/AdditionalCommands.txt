@@ -1,0 +1,5 @@
+UPDATE        workorders
+	SET           workorders.ResidentID = residents.residentID
+FROM          workorders 
+	INNER JOIN    residents
+ON            workorders.propertyID = residents.propertyID;

@@ -1,0 +1,43 @@
+create table Suppliers (
+
+supplierID		char(12)		not null	unique, 
+supplierName		varchar(25)		not null, 
+address			varchar(25)		not null, 
+city			varchar(15)		not null, 
+state			char(2)			not null, 
+zip			char(5)			not null, 
+phone			char(10)		not null, 
+contactPerson		varchar(25)		not null, 
+webAddress		varchar(20)		not null, 
+primary key (supplierID));
+
+insert into suppliers values ('000000000001', 'Albertsons', '100 Danforth Ave', 'Phoenix', 'AZ', '85280', '4803211456', 'Fred Chambers', 'www.albertsons.com');
+insert into suppliers values ('000000000002', 'Bennies', '24 Orleans Road', 'Dennis', 'MA', '02564', '1457889026', 'Benny Rogers', 'www.bennysdennis.com');
+insert into suppliers values ('000000000003', 'Carlos Autos', '335 S 34th St', 'Tempe', 'AZ', '85247', '6024887625', 'Roger Davies', 'www.carlosautos.com');
+insert into suppliers values ('000000000004', 'Danielson Inc', '41 W Hopper Ave', 'Dallas', 'TX', '78256', '4567832168', 'Michael Parsons', 'www.danielson.com');
+insert into suppliers values ('000000000005', 'Ellerbe', '1 Ellerbe Dr', 'Palo Alto', 'CA', '98890', '2985624612', 'Donnel Richardson', 'www.ellerbe.net');
+insert into suppliers values ('000000000006', 'Francine Baking', '6927 Canton Ave', 'Indianapolis', 'IN', '53328', '8772378922', 'Angel Martinez', 'www.francinebk.com');
+insert into suppliers values ('000000000007', 'Gerald Steel', '300 Gerald Blvd', 'Pittsburgh', 'PA', '19445', '6103349523', 'Brandon Shale', 'www.geraldsteel.com');
+insert into suppliers values ('000000000008', 'Ellessedil', '104 Elf Dr', 'Grand Rapids', 'MO', '44587', '7380502657', 'Eventine Ellessedil', 'www.ellessedil.com'); 
+insert into suppliers values ('000000000009', 'Happy Harry', '22 S 12th Dr', 'Santa Fe', 'NM', '87723', '2874561037', 'Bobby Flay', 'www.happyharry.com'); 
+insert into suppliers values ('000000000010', 'Inez Inc', '2387 Potter Rd', 'Ruben', 'TX', '12285', '8927475902', 'Julia Danvers', 'www.inez.in'); 
+insert into suppliers values ('000000000011', 'Jerry Rigging', '723 Gurtien Dr', 'Tucson', 'AZ', '78965', '4809725634', 'Colter Paden', 'www.jerryrigging.com');
+insert into suppliers values ('000000000012', 'Killing Floor', '78 Game Blvd', 'Philadelphia', 'PA', '19023', '6103211286', 'Patrick Donoghue', 'www.killingfloor.com');
+insert into suppliers values ('000000000013', 'Lubrication Specialists', '99 W 27th Ave', 'Sun City', 'AZ', '85267', '4809223785', 'John Capinot', 'www.lubespecs.com');
+insert into suppliers values ('000000000014', 'Mad Eyes', '23 83rd St', 'Orlando', 'FL', '82237', '2765901846', 'Professor Moody', 'www.mad.eyes');
+insert into suppliers values ('000000000015', 'Nonce', '23 Inders Ln', 'San Francisco', 'CA', '90223', '2349972564', 'Harry Tonks', 'www.nonce.com');
+insert into suppliers values ('000000000016', 'Open Doors', '88 N 23rd Ave', 'Fort Lauderdale', 'FL', '82745', '8264501735', 'Johnny Unitas', 'www.opendoors.net');
+insert into suppliers values ('000000000017', 'Paden Mortuary', '2397 Yupiata Ave', 'Vantana', 'NH', '18624', '7552364798', 'Kyler Paden', 'www.ustabweslab.com');
+insert into suppliers values ('000000000018', 'Queens Boulevard', '100 Queens Boulevard', 'Beverly Hills', 'CA', '90210', '2774891735', 'Vincent Chase', 'www.queensblvd.com');
+insert into suppliers values ('000000000019', 'Robby Ray', '28856 N Scottsdale Rd', 'Scottsdale', 'AZ', '85254', '4809776523', 'Robby Ray', 'www.robbyray.biz');
+insert into suppliers values ('000000000020', 'Sam Smith', '102 Hollywood Blvd', 'Hollywood', 'CA', '99238', '9266417452', 'Sam Smith', 'www.samsmith.com');
+insert into suppliers values ('000000000021', 'Tambourines Galore', '542 S 12th St', 'Fort Worth', 'TX', '62254', '9152364728', 'Hermione Walts', 'www.tambourines.com');
+insert into suppliers values ('000000000022', 'Underground Scene', '112 Indie Dr', 'New Orleans', 'LA', '51236', '4562189331', 'Francois Henderson', 'www.under.ground');
+insert into suppliers values ('000000000023', 'Very Good Building Co', '103 Harriet Street', 'Pawnee', 'IN', '22839', '2864591036', 'Ron Swanson', 'www.ihategvmt.gov');
+insert into suppliers values ('000000000024', 'Walker Library', '55 Haystack Cir', 'Phoenixville', 'PA', '19320', '6103211286', 'Jennifer Walker', 'www.weluvreading.com');
+insert into suppliers values ('000000000025', 'Xerxes Pizza', '44 South St', 'Augusta', 'ME', '72236', '8265149057', 'Abigail Stratton', 'www.xerxespizza.com');
+insert into suppliers values ('000000000026', 'Youuuuuu', '1900 S 64th St', 'Palm Springs', 'CA', '88274', '5218893318', 'Soulja Boy', 'www.youuuuuu.com');
+insert into suppliers values ('000000000027', 'ZetaByte', '1 Zetabyte Dr', 'Los Angeles', 'CA', '92264', '2764850187', 'Dillon Nage', 'www.zetabyte.com');
+insert into suppliers values ('000000000028', 'Idiots Inc', '25 St Lucia St', 'Vista', 'ND', '28465', '2856109378', 'Mark Macluskie', 'www.idiotsrus.com');
+insert into suppliers values ('000000000029', 'Rogers Inspections', '2346 W 55th Ave', 'Phoenix', 'AZ', '85266', '480215896', 'Will Rogers', 'www.rogerseyes.com');
+insert into suppliers values ('000000000030', 'Cranberry', '110 Cranberry Dr', 'Pawtucket', 'MA', '03554', '2745510487', 'Al Ryan', 'www.cranberry.com');

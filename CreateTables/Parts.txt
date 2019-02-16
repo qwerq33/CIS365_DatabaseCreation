@@ -1,0 +1,49 @@
+Create table Parts (
+
+Part_ID			char(12) 	not null 	unique,
+Category 		varchar(50)	not null,
+Sub_Category		varchar(35) 	not null,
+SupplierName		varchar(25)	not null,
+PartName 		varchar(35) 	not null,
+Description		varchar(50) 	not null,
+SupplierID		char(12)	not null,
+Quantity_In_Stock	decimal(5,0)	not null,
+Special_Features	varchar(50),
+Reorder_Point		decimal(5,0)	not null,
+Reorder_Quantity	decimal(5,0) 	not null,
+Price			Decimal(10,2)	not null,
+
+Primary Key (Part_ID),
+Foreign Key (SupplierID) REFERENCES Suppliers(SupplierID));
+
+insert into Parts values('12242', 'Hvac', 'Air Quality', 'Danielson Inc', 'Air Bear', 'Air Filter 12x24x2', '000000000004',60,'' , 55, 120, 69);
+insert into Parts values('20202', 'Hvac', 'Air Quality', 'Danielson Inc', 'Air Bear Large', 'Air Filter 20x20x20','000000000004', 18,'', 2, 12, 59);
+insert into Parts values('24242', 'Hvac', 'Air Quality', 'Danielson Inc', 'Honeyhive Stopper','Air Filter 24x24x2','000000000004', 108,'', 34, 72, 70);
+insert into Parts values('36502', 'Hvac', 'Air Quality', 'Danielson Inc', 'Filter Bear Media Roll','Air Filter Roll Media 36x50x2', '000000000004', 70,'', 12, 100, 85.99);
+insert into Parts values('3jr70', 'Compressor', '1hp Air Compressor', 'Inez Inc','New Line Compressor 1Hp V3', '2.3 Cfm@ 125 Psi, 3 Gal Hotdog, 115V', '000000000010', 16,'Dual Knob Mechanism', 10, 20, 99.95);
+insert into Parts values('4zf40', 'Lubricants', 'Compressor Oil, 5 Gal',  'Lubrication Specialists', 'Valvoline Cold Oil 2d','Refrigerator, Compressor Oil','000000000013', 48,'', 25, 40, 27.85);
+insert into Parts values('5u672', 'Pumps', '1" Diaphragm Pump', 'Inez Inc', 'Santo Steel Diaphram','Stainless Steel w/ Santoprene Diaphragm','000000000010', 7,'', 3, 6, 149.99);
+insert into Parts values('7h509', 'Blowers', 'Belt-Drive Industrial Blowers', 'Inez Inc', 'Belt Pulley 4-15','15" W/ 2Hp, 1 Ph, 115/230v Motor','000000000010', 7,'', 5, 1, 85.72);
+insert into Parts values('Ar22', 'Pnumatic / Air Supplies - Ar', 'Levers', 'Jerry Rigging', 'Switch hose Qk Connect 1/4','2p623 1/4" hose 1/4" NptQuickConnect MConnector','000000000011', 20,'Double value container', 16, 10, 45.69);
+insert into Parts values('Ar23', 'Pnumatic / Air Supplies - Ar', 'Levers', 'Jerry Rigging', 'Switch hose Qk Connect 3/8', '2p64 3/8" hose 1/4" Npt Quick Connect MConnector','000000000011', 1, 'Pressure gauge', 0, 2, 59.99);
+insert into Parts values('Ar42', 'Pnumatic / Air Supplies - Ar', 'Levers', 'Happy Harry', 'Stream Air Moc 7', 'Air Line Regulator, 1/4" / Ar42','000000000009', 5, 'Auto Pressure Release', 4, 2, 89.99);
+insert into Parts values('Bs2', 'Building Supplies Bs', 'Door Products', 'Open Doors', 'Clearly Open', '12" x 12 Guage x 200ft Door Stripping/bs2','000000000016', 2, 'Vinyl Door Strip Clear...120 x 12" x 200ft', 0, 1, 35.99);
+insert into Parts values('Bs3', 'Building Supplies Bs', 'Cements', 'Killing Floor', 'Strong Footing Ten','Por-rok Cement Patch For Floors / Bs3','000000000012', 1, '20lb bag plus shield protector', 3, 2, 30);
+insert into Parts values('Ep-85w-140', 'Lubricants', 'Diaphram oils', 'Lubrication Specialist', 'Phram Slick 7', '378 Diaphragm Slide V10','000000000013', 7,'', 5, 0, 149.99);
+insert into Parts values('Es14', 'Electric Parts/ Supplies - es', 'Wiring', 'ZetaByte', 'Electro Pulser','Bellfast transductor 17" x29v','000000000026', 3,'Waterproof lining', 8, 4, 17.99);
+insert into Parts values('Es19', 'Electric Parts / Supplies - es', 'Transducer', 'ZetaByte', 'Back To The Future Maker 1', 'Flux Capacitor Tiempo Shift 1985', '000000000026',9,'M.J-Fox Edition', 7, 21, 200);
+insert into Parts values('Es10', 'Electric Parts / Supplies - es', 'Wiring', 'Idiots Inc', 'Biff Bully Down 3','14w39 Biff Braker Base Wrap','000000000028', 2,'', 7, 15, 10.99);
+insert into Parts values('A&W1012', 'Grease and Oils', 'Machine Oil', 'Carlos Autos', 'Synthoil 80w', '80w1595 synthetic','000000000003', 12,'Dual usage for 80w1594 version', 11, 15, 24.99);
+insert into Parts values('Vlt89', 'Electric Parts / Supplies - es', 'Power Gloves', 'Bennies', 'Electro HanHold','Giga-grip shield protection','000000000002', 4,'', 3, 5, 19.99);
+insert into Parts values('78gl9', 'Plumbing Parts', 'Garbage Disposals', 'Rogers Inspections', 'Parascope 5','457 V-Tech Headlight Lens Camera','000000000029', 1,'', 3, 5, 139.99);
+insert into Parts values('Jck89r', 'Construction Supplies', 'Demolition', 'Gerald Steel', 'Power Jack 8', '357 MagnumBoost JackHammer','000000000007', 3,'Rubber grip switch hitter handle', 3, 4, 44.99);
+insert into Parts values('Ntz45', 'Nuts / Bolts / Screws', 'Washers', 'Very Good Building Co', 'Basic 25cm Washer', '25cm washer 24dl','000000000023', 35,'', 30, 50, .45);
+insert into Parts values('Scrz84', 'Nuts / Bolts / Screws', 'Screws', 'Very Good Building Co', 'Blade Turn 9', '9inch Blade Cut Felipes Head Pt396', '000000000023', 20,'', 5, 20, .85);
+insert into Parts values('Frnkn8', 'Nuts / Bolts / Screws', 'Bolt', 'Very Good Building Co', 'Frankin Blot Strong 2in','2inch HexBolt','000000000023', 25,'', 12, 30, 1.02);
+insert into Parts values('Pnk1Pnt', 'Paint / Tools / Supplies', 'Paint', 'Francine Baking', 'Pink Panther Prawl','Color 25561 Pink 1gal','000000000006', 12,'Resealable Non-spill Top', 5, 10, 7.99);
+insert into Parts values('DrkN1t3', 'Paint / Tools / Supplies', 'Paint', 'Francine Baking', 'Batman Returns Black','Color 77781 Black 1gal','000000000006', 14,'Resealable Non-spill Top', 5, 10, 8.99);
+insert into Parts values('Chn3L3', 'Paint / Tools / Supplies', 'Paint', 'Francine Baking', 'Ron Burgundy','Color Chan3 Deep Burgundy','000000000006', 8,'', 7, 12, 10.99);
+insert into Parts values('Wh1T84', 'Paint / Tools / Supplies', 'Paint', 'Francine Baking', 'Pearl White', 'Color 4435 Wht','000000000006', 37,'', 15, 25, 7.99);
+insert into Parts values('3340', 'Grease and Oils', 'Rotor Oil', 'Carlos Autos', 'Synthend HC Tuff','WD340-88 synthetic blend','000000000003', 8,'Heat and Cold resistant', 2, 4, 26.50);
+insert into Parts values('Bldz85', 'Cieling Fans', 'Living Room', 'Tambourines Galore', 'Luxury Spin Blades 24','Large LVRoom 389 Blade 24inch','000000000021', 24,'Universal compatibility',  11, 15, 14.99);
+insert into Parts values('Ms249', 'Maintenance Supplies - Ms', 'Batteries', 'Queens Boulevard', 'Energizer AA','AA Size Battery', '000000000018', 14,'', 10, 10, 8.99);

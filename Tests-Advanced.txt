@@ -1,0 +1,81 @@
+/* Advanced Query 1: Find out how many Accidents each employee has been in. */
+	select distinct a.EmployeeID, count(*) 'Number of Accidents'
+		from AccidentReport a
+			group by a.EmployeeID
+			Having count(*) >= 1;
+	
+
+
+
+
+
+/* Advanced Query 2: Find how many Work order tasks each Technician has done. */
+	select TechnicianID, count(*) 'Number of Work Orders'
+		from workOrderTasks, (select distinct WorkOrderNumber, TaskID from WorkOrderTasks) E
+			group by TechnicianID
+			having count(*) > 0;
+
+
+
+
+
+
+
+/* Advanced Query 3: Find Office workers who have filed Accident Reports. */ 
+	select FName, LName
+		from Employee
+			where EmployeeID IN (
+				select EmployeeID
+					from AccidentReport);
+
+
+
+
+
+
+/* Advanced Query 4: Find a list of Suppliers that have supplied a part on a specific Work Order. */
+	select distinct SupplierName
+		from Suppliers
+			where SupplierID IN ( 
+				select SupplierID
+					from PartOrder
+						where Part_ID IN (
+							select Part_ID
+								from Parts
+									where Part_ID IN (
+										select Part_ID
+											from WorkOrderTasks
+												where WorkOrderNumber = '123619082679699')));
+
+
+
+
+
+
+/* Advanced Query 5: View all residents that have lived at a specific problematic property. */
+	create view Fleet_Street_Residents as
+		select ResidentID, ResidentName
+			from Residents
+				where PropertyID IN (
+					select PropertyID
+						from Properties
+							where PropertyName = 'Fleet Street');
+	select * 
+		from Fleet_Street_Residents;
+
+
+
+
+
+
+/* Advanced Query 6: View all Emergency Contacts for Employees that have been in Emergency-Level accidents. */
+	create view Called_Emergency_Contacts
+		select ContactName, ContactPhone
+			from Employee
+				where EmployeeID IN ( 
+					select EmployeeID
+						from AccidentReport
+							where Status = 'Emergency');
+
+	select *
+		From Called_Emergency_Contacts;

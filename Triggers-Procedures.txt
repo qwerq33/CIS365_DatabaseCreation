@@ -1,0 +1,95 @@
+		/* Trigger  */
+
+/* Trigger -  When a new work order is created (inserted), automatically assign the first available technician to do the job; */
+assign a tech with the appropriate trade specialty (if the task is plumbing, don’t assign an electrician). */
+
+/* Step 1: Create the AssignTech procedure */
+create trigger TechAssign
+	on WorkOrderTasks
+		after insert 
+			as update WorkOrderTasks 
+				set TechnicianID = (
+					select top 1 TechniciansID 
+						from technicians t, WorkOrders wo
+							where t.TechniciansID NOT IN 
+								(select TechnicianID 
+									from WorkOrderTasks)
+							and t.TradeSpecialty = wo.Category)
+			where WorkOrderNumber = (select WorkOrderNumber from inserted)
+			and TaskID = (select taskID from inserted);
+
+
+
+
+
+
+/* Step 2: Insert the Prerequisite Work Order */
+insert into WorkOrders
+	values('000000000000001', '619072530599', '', getdate(), getdate(), getdate(), '', '', 'Open', 
+	'028000000000', 'Plumbing');
+
+
+
+
+
+
+/* Step 3: Run Commands that should execute Trigger */
+insert into WorkOrderTasks 
+	values ('000000000000001', '000000000003', 'Clogged Toilet', '78gl9', '000000000004', 'N', 
+	'080000000000', '180000000000', '');
+
+
+
+
+
+				/* Procedure */
+
+/* Procedure - Allow an Employee to set a Work Order to Delayed, and compile all */
+/* necessary information to the Delayed Work Order Log */
+
+/* Step 1: Create Delayed Work Order Log Table */
+create table DelayedWOLog(
+    WO#   				 char(15) not null,
+	WOT#				 char(12) not null,
+    StartDate   		 date not null,
+    AssignedTech   	 char(12) not null,
+    WORootCause   		 char(500) not null,
+    ReasonForDelay   	 char(500) not null,
+    StatusChangeDate    date    default GETDATE(),
+    primary key(WO#, WOT#),
+    foreign key(WO#) references WorkOrders(WorkOrderNumber),
+	foreign key(WO#, WOT#) references WorkOrderTasks(WorkOrderNumber, TaskID),
+    foreign key(AssignedTech) references Technicians(TechniciansID)
+);
+
+
+
+
+
+
+/* Step 2: Create the Delay Work Order Procedure */ 
+create procedure DelayWorkOrder
+	@WO# char(15),
+	@WORootCause char(500),
+	@ReasonForDelay char(500)
+		as insert into DelayedWOLog (WO#, WOT#, StartDate, AssignedTech, WORootCause, ReasonForDelay, 
+		StatusChangeDate)
+				(select @WO#, taskID, WorkOrders.StartDate, WorkOrderTasks.TechnicianID, @WORootCause, 
+				@ReasonForDelay, getdate() 
+					from WorkOrders, WorkOrderTasks
+						where WorkOrders.WorkOrderNumber = @WO#
+						and WorkOrderTasks.WorkOrderNumber = @WO#)
+		update WorkOrders set WorkStatus = 'Delayed' where workorders.workorderNumber = @WO#;
+
+
+
+
+
+
+/* Step 3: Execute the Delay Work Order Procedure */
+exec DelayWorkOrder '123619082679699', 'Solar Panel Failure', 'Resident not home';
+
+
+
+
+

@@ -1,0 +1,46 @@
+create table Employee(
+
+EmployeeID		char(12),
+FName			varchar(25)	NOT NULL,
+LName			varchar(25) 	NOT NULL,
+Address			varchar(50)	NOT NULL,
+Phone			char(12)	NOT NULL,
+ContactName		varchar(25)	NOT NULL,		
+ContactPhone		char(12)	NOT NULL,
+ContactRelationship	varchar(7)	NOT NULL,
+HourlyRate		decimal(7, 2)	NOT NULL	Default (12.00),
+JobType			varchar(2)	NOT NULL,
+Primary Key (EmployeeID));
+
+
+insert into Employee values('010000000000', 'Susan', 'Franklin', '9434 S. Oxford Lane', '602-123-4567', 'James', '602-123-1234', 'Parent', 12.00, 'OP');
+insert into Employee values('020000000000', 'Rocky', 'Balboa', '320 Kingston St.', '225-283-9525', 'Jenny', '330-391-4396', 'Spouse', 12.00, 'OP');
+insert into Employee values('030000000000', 'Hermione', 'Granger', '124 Leatherwood Court', '214-821-3291', 'John', '402-251-4958', 'Other', 12.00, 'OP');
+insert into Employee values('040000000000', 'Katniss', 'Everdeen','698 Greystone Street', '502-396-9005', 'Emily', '151-893-3116', 'Parent', 12.00, 'OP');
+insert into Employee values('050000000000', 'James', 'Howlett', '698 Greystone Street', '305-251-5162', 'Logan', '442-234-3139', 'parent', 12.00, 'OP');
+insert into Employee values('060000000000', 'Lara', 'Croft', '78 Holly St.', '479-790-3723', 'Dwight', '678-916-1744', 'Spouse', 12.00, 'OP');
+insert into Employee values('070000000000', 'Michael', 'Myers', '418 North Bury Street', '209-541-8466', 'Sarah', '203-961-4471', 'Other', 12.00, 'OP');
+insert into Employee values('080000000000', 'Sherlock', 'Holmes', '94 Fairground Dr.', '424-610-3061', 'Watson', '304-595-1928', 'Partner', 12.00, 'OP');
+insert into Employee values('090000000000', 'Bugs', 'Bunny',  '7 Saxton St.', '614-232-9030', 'Brian', '602-726-1234', 'Parent', 12.00, 'OP');
+insert into Employee values('100000000000', 'Wonder', 'Woman', '9240 Dunbar Ave.', '254-382-8335', 'SuperMan', '757-657-4898', 'Other', 12.00, 'OP');
+insert into Employee values('110000000000', 'Walter', 'White', '770 Wayne Lane', '559-782-2463', 'Skyler', '575-332-9015', 'Spouse', 12.00, 'OP');
+insert into Employee values('120000000000', 'Mickey', 'Mouse', '7494 Ridge St.', '484-408-6410', 'Mini', '605-738-3195', 'Spouse', 12.00, 'OP');
+insert into Employee values('130000000000', 'Bellatrix', 'Lestrange', '7350 Union St.', '801-264-4553', 'Lord', '316-322-1442', 'Other', 12.00, 'OP');
+insert into Employee values('140000000000', 'Mike', 'Ross', '7746 Marconi Dr.', '682-212-9006', 'Jenni', '803-216-6769', 'Spouse', 12.00, 'OP');
+insert into Employee values('150000000000', 'Lord', 'Voldemort', '45 Airport Road', '276-312-1266', 'Dumbledore', '513-601-4534', 'Partner', 12.00, 'OP'); 
+
+insert into Employee values('160000000000', 'Brick', 'Franklin', '8116 West Wintergreen Dr.', '480-589-8780', 'Julian', '443-476-6543', 'Child', 12.00, 'T');
+insert into Employee values('170000000000', 'Black', 'Widow', '842 S. Knight Avenue', '781-449-6657', 'Jackson', '501-398-4523', 'Spouse', 12.00, 'T');
+insert into Employee values('180000000000', 'Dead', 'Pool', '7950 Marvon St.', '630-318-1114', 'Jordan', '248-294-7890', 'Child', 12.00, 'T');
+insert into Employee values('190000000000', 'Spider', 'Man', '9896 Kingwood Road', '684-770-4268', 'Mary', '512-566-3946', 'Spouse', 12.00, 'T');
+insert into Employee values('200000000000', 'Cat', 'Woman', '4 South Canterbury Street', '715-579-1952', 'Paul', '216-378-4104', 'Child', 12.00, 'T');
+insert into Employee values('210000000000', 'Letty', 'Toretto', '979 Plumb Branch Court', '641-982-4930', 'Dom', '480-429-9527', 'Other', 12.00, 'T');
+insert into Employee values('220000000000', 'Mia', 'Toretto', '8010 Pulaski Drive', '225-246-4044', 'Paul', '212-459-4581', 'Spouse', 12.00, 'T');
+insert into Employee values('230000000000', 'Peter', 'Parker', '107 Walnut wood Road', '507-431-8471', 'Steve', '325-669-5175', 'Parent', 12.00, 'T');
+insert into Employee values('240000000000', 'Harry', 'Potter', '816 West Golf Lane', '586-306-9139', 'Ron', '323-835-6052', 'Other', 12.00, 'T');
+insert into Employee values('250000000000', 'Rachel', 'Zane', '35 Manchester Dr.', '786-258-3696', 'Robert', '343-312-4112', 'Parent', 12.00, 'T');
+insert into Employee values('260000000000', 'Harvey', 'Specter', '15 S. Hill Field Road', '501-940-9982', 'Tom', '551-587-2263', 'Parent', 12.00, 'T');
+insert into Employee values('270000000000', 'Donna', 'Paulson', '9886 Rock Creek Rd.', '215-609-3256', 'Tony', '575-329-9209', 'Other', 12.00, 'T');
+insert into Employee values('280000000000', 'Louis', 'Litt', '406 Buttonwood Lane', '339-201-5156', 'Sheila', '281-470-6938', 'Spouse', 12.00, 'T');
+insert into Employee values('290000000000', 'Jessica', 'Pearson', '7563 East Tarkiln Hill Drive', '323-974-3837', 'Jeff', '502-350-9182', 'Partner', 12.00, 'T');
+insert into Employee values('300000000000', 'James', 'Bond', '7138 Galvin Avenue', '217-581-5016', 'Jamie', '785-818-1652', 'Other', 12.00, 'T');

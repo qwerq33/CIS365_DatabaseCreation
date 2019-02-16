@@ -1,0 +1,42 @@
+create table Assets(
+
+AssetID            	char(12)        	not null        unique, 
+AssetSN           	varchar(15), 
+Description           	varchar(35)        	not null, 
+Type                	varchar(25), 
+CurrentLocation        	varchar(15)        	not null, 
+ServiceDate            	date            	not null, 
+SupplierCode        	varchar(12), 
+primary key (AssetID));
+
+insert into assets values ('000000000001', '', 'Building Number 101', 'Facility', 'Bldg 3', '', '');
+insert into assets values('000000000002', '', 'Building Number 102', 'Facility', 'Bldg 3', '', '');
+insert into assets values('000000000003', 'F1345', 'Cafeteria Water Filter', 'Fixed Equip', 'Bldg 1', '', '');
+insert into assets values('000000000004', '', 'Building Number 103', 'Facility', 'Bldg 4', '', '');
+insert into assets values('000000000005', '', 'Building Number 104', 'Facility', 'Bldg 5', '', '');
+insert into assets values('000000000006', '', 'Building Number 105', 'Facility', 'Bldg 6', '', '');
+insert into assets values('000000000007', 'MAR279', 'Cafeteria Ice Machine', 'Fixed Equip', 'Bldg 2', '', ''); 
+insert into assets values('000000000008', 'CC2987Y367', 'Cafeteria Oven', 'Fixed Equip', 'Bldg 3', '', '');
+insert into assets values('000000000009', 'P507-00200', 'Cafeteria Refrig & Freezer Sys', 'Fixed Equip', 'Bldg 4', '', '');
+insert into assets values('000000000010', '', 'Emergency Lighting Sys, Bldg 101', 'Fire Lighting', 'Bldg 5', '', 'Fire/Safety');
+insert into assets values('000000000011', '', 'Emergency Lighting Sys, Bldg 102', 'Fire Lighting', 'Bldg 6', '', 'Fire/Safety');
+insert into assets values('000000000012', '', 'Entrance Doors, Bldgs 101, 102', 'Facility', '', '', 'Fire/Safety');
+insert into assets values('000000000013', '1ftcr105jua3567', '1995 Ford F150', 'Vehicle', 'Space 21', '2001-08-10', 'Jones Ford');
+insert into assets values('000000000014', '', 'Fire Hose Cabinet Bldg 101', 'Fire Hose', 'Hallway 1-1', '', 'Graingers');
+insert into assets values('000000000015', '', 'Fire Hose Cabinet Bldg 102', 'Fire Hose', 'Hallway 1-2', '', 'Graingers');
+insert into assets values('000000000016', '', 'Fire Hose Cabinet Bldg 102', 'Fire Hose', 'Hallway 2-1', '', 'Graingers');
+insert into assets values('000000000017', '', 'Handheld Fire Extinguisher Bldg 101', 'Fire Extinguisher', 'Bldg 101', '', 'Graingers');
+insert into assets values('000000000018', '', 'Handheld Fire Extinguisher Bldg 102', 'Fire Extinguisher', 'Bldg 101', '', 'Graingers');
+insert into assets values('000000000019', '', 'Handheld Fire Extinguisher', 'Fire Extinguisher', 'Bldg 102', '', 'Graingers');
+insert into assets values('000000000020', '', 'Fire Sprinkler System Bldg 101', 'Fire Sprinkler', '', '', 'Fire/Safety');
+insert into assets values('000000000021', '', 'Fire Sprinkler System Bldg 102', 'Fire Sprinkler', '', '', 'Fire/Safety');
+insert into assets values('000000000022', 'GENR13479', 'Emergency Generator', 'Generator', 'Maint. Shed', '', 'Cummins');
+insert into assets values('000000000023', '', 'Property Grounds/Landscaping', '', '', '', '');
+insert into assets values('000000000024', 'P706-00395-z', 'Ice Machine', 'Fixed Equip', 'Bldg 101', '', 'ABC Beverage');
+insert into assets values('000000000025', '', 'Lobby in Building 101', '', '', '', '');
+insert into assets values('000000000026', '9452254103', 'Lawn Tractor', 'Vehicle', 'Maint. Shed', '', 'Cummins');
+insert into assets values('000000000027', '', 'Front Parking Lot - 50 Spaces', 'Facility', 'Front Lot', '', '');
+insert into assets values('000000000028', '', 'Back Parking Lot - 75 Spaces', 'Facility', 'Back Lot', '', '');
+insert into assets values('000000000029', '', 'Swimming Pool', 'Facility', 'Pool Area', '', '');
+insert into assets values('000000000030', '63267181', 'Carrier 400 Ton Chiller, Bldg 101', 'HVAC', 'Bldg 101 Roof', '', 'Cummins');
+

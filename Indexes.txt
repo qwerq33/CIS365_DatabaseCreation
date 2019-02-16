@@ -1,0 +1,27 @@
+/*  We want to index Part_ID because it is a foreign
+    key and it makes sense to want to search a table
+    by its foreign key                                */
+
+create index Part_ID
+on PartOrder2(Part_ID)
+
+/* We want to index State because some
+    reports may reference a grouping by
+    this attribute                          */
+create index state
+on Suppliers2(state)
+
+/*        Query                */
+
+set statistics time on;
+select distinct UserID, FName
+    from UserIDs2 u, Employee2 e, Technicians2 t, WorkOrderTasks2 wot,
+        WorkOrders2 wo, PartOrder2 po, Suppliers2 s
+    where u.EmployeeID = e.EmployeeID
+        and e.EmployeeID = t.TechniciansID
+        and t.TechniciansID = wot.TechnicianID
+        and wot.WorkOrderNumber = wo.WorkOrderNumber
+        and wo.EndDate > wo.DesiredDate
+        and wot.Part_ID = po.Part_ID
+        and po.SupplierID = s.SupplierID
+        and s.state = ‘AZ’

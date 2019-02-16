@@ -1,0 +1,49 @@
+Create table PartOrder(
+
+PartOrderNumber		char(12) 	not null 	unique,
+SupplierID		char(12)	not null,
+Part_ID			char(12)	not null,
+OrderDate		DATE		not null,
+DeliveryRating		char(7)		not null,
+
+Primary Key (PartOrderNumber),
+Foreign Key (Part_ID) REFERENCES Parts(Part_ID),
+Foreign Key (SupplierID) REFERENCES Suppliers(SupplierID));
+
+insert into PartOrder values('A117','000000000023', 'Frnkn8','2018-01-30', 'On-Time');
+insert into PartOrder values('A118','000000000006', 'Wh1T84', '2018-02-02', 'On-Time');
+insert into PartOrder values('A119','000000000018', 'Ms249', '2018-02-10', 'On-Time');
+insert into PartOrder values('A120','000000000013', '4zf40', '2018-02-20', 'On-Time');
+insert into PartOrder values('A121','000000000004', '12242', '2018-02-20', 'On-Time');
+insert into PartOrder values('A122','000000000004', '36502', '2018-03-15', 'On-Time');
+insert into PartOrder values('A123','000000000029', '78gl9', '2018-03-18', 'Damaged');
+insert into PartOrder values('A124','000000000011', 'Ar22', '2018-04-01', 'On-Time');
+insert into PartOrder values('A125','000000000011', 'Ar23', '2018-04-01', 'On-Time');
+insert into PartOrder values('A126','000000000016', 'Bs2', '2018-04-05', 'Late');
+insert into PartOrder values('A127','000000000013', 'Ep-85w-140', '2018-04-09', 'On-Time');
+insert into PartOrder values('A128','000000000028', 'Es10', '2018-04-21', 'Damaged');
+insert into PartOrder values('A129','000000000003', 'A&W1012','2018-04-25', 'On-Time');
+insert into PartOrder values('A130','000000000010', '5u672', '2018-05-02', 'Late');
+insert into PartOrder values('A131','000000000004', '24242', '2018-05-02', 'Damaged');
+insert into PartOrder values('A132','000000000002', 'Vlt89', '2018-05-23', 'On-Time');
+insert into PartOrder values('A133','000000000006', 'Pnk1Pnt', '2018-06-04', 'Late');
+insert into PartOrder values('A134','000000000006', 'Chn3L3', '2018-06-10', 'On-Time');
+insert into PartOrder values('A135','000000000023', 'Ntz45', '2018-06-26', 'Late');
+insert into PartOrder values('A136','000000000009', 'Ar42', '2018-06-30', 'On-Time');
+insert into PartOrder values('A137','000000000010', '7h509', '2018-07-03', 'On-Time');
+insert into PartOrder values('A138','000000000023', 'Frnkn8','2018-07-05', 'Damaged');
+insert into PartOrder values('A139','000000000007', 'Jck89r', '2018-07-11', 'On-Time');
+insert into PartOrder values('A140','000000000023', 'Scrz84', '2018-07-11', 'On-Time');
+insert into PartOrder values('A141','000000000021', 'Bldz85','2018-07-17', 'Late');
+insert into PartOrder values('A142','000000000018', 'Ms249','2018-08-01', 'On-Time');
+insert into PartOrder values('A143','000000000006', 'Wh1T84', '2018-08-01', 'On-Time');
+insert into PartOrder values('A144','000000000026', 'Es14', '2018-08-13', 'Late');
+insert into PartOrder values('A145','000000000004', '20202', '2018-08-24', 'On-Time');
+insert into PartOrder values('A146','000000000010', '3jr70', '2018-09-02', 'On-Time');
+insert into PartOrder values('A147','000000000012', 'Bs3', '2018-09-03', 'On-Time');
+insert into PartOrder values('A148','000000000018', 'Ms249', '2018-09-10', 'On-Time');
+insert into PartOrder values('A149','000000000006', 'DrkN1t3', '2018-09-16', 'On-Time');
+insert into PartOrder values('A150','000000000003', '3340', '2018-09-18', 'Damaged');
+insert into PartOrder values('A151','000000000026', 'Es19', '2018-10-05', 'On-Time');
+insert into PartOrder values('A152','000000000006', 'Wh1T84', '2018-10-11', 'On-Time');
+

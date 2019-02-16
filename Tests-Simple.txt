@@ -1,0 +1,174 @@
+/* Simple Test 1: Two Insert Statements that should execute*/
+	insert into Employee
+	values ('000000000001', 'Zach', 'Mitchell', '25 Vinelyn Rd', '610-445-8898', 'Susan', '871-236-4852', 
+	'Parent', '', 12.00);
+
+	insert into AccidentReport
+	values ('000000000001', '10-25-2018', '76 N 53rd Dr', 'Vehicle', '10-25-2018', '11-1-2018', 
+	'123621060330599', 'minor');
+
+
+
+
+
+
+/* Simple Test 2: Two Insert Statements that should FAIL*/ 
+	insert into AccidentReport 
+	values ('000000999999', '10-25-2018', '75 N 52nd Blvd', 'Helicopter', '10-25-2018', '10-25-2023', '', 'emergency');
+	insert into Employees
+	values ('000000999999', 'Jimbo', 'Fischer', '1 Chancy Ln', '123-546-9078', '', 'Rob Rigley', '918-396-2861', 'Other');
+		/* execute seperately */ 
+		/* they should fail because they are not in correct order of entry */ 
+
+
+
+
+
+
+/* Simple Test 3: Find certificate and need for renewal */ 
+	select TechniciansID, CertificateNumber, DateOfCertRenewal
+		from technicians
+			where techniciansID IN (
+				select EmployeeID
+					from Employee
+						where Fname = 'Spider'
+						and Lname = 'Man');
+
+
+
+
+
+
+/* Simple Test 4: Delete a technician and all his certificates with one statement */ 
+		delete  
+			from employee
+				where employeeID = (
+					select employeeID
+						from Employee
+							where Fname = 'Bobby'
+							and Lname = 'Ryan');
+
+
+
+
+
+
+/* Simple Test 5: See all parts and labor costs on a work order*/
+	select wo.WorkOrderNumber, ((sum(wot.totalhours) * e.hourlyrate) + sum(p.price)) 'Total Costs'
+		from WorkOrderTasks wot, technicians t, parts p, employee e, workorders wo
+			where wot.Part_ID = p.Part_ID
+			and wot.TechnicianID = t.TechniciansID
+			and t.techniciansID = e.employeeID
+			and wo.WorkOrderNumber = '123601110528899'
+			group by wo.workordernumber, e.hourlyrate;
+
+
+
+
+
+
+/* Simple Test 6: Deleting a customer who has past work orders should FAIL*/
+	delete  
+		from residents
+			where ResidentID = '003000000000';
+	
+	select * 
+		from WorkOrders
+			where PropertyID IN (
+				select PropertyID
+					from Residents
+						where ResidentID = '003000000000');
+
+
+
+
+
+/*Simple Test 7: Deleting a UserID while the Employee still exists should succeed*/
+begin transaction;
+select *
+	from UserIDs
+	where EmployeeID = (
+		select EmployeeID
+		from Employee
+			where FName = 'Bugs'
+			and LName = 'Bunny');
+
+delete from UserIDs
+	where EmployeeID = (
+		select EmployeeID
+		from Employee
+			where FName = 'Bugs'
+			and LName = 'Bunny');
+
+select *
+	from UserIDs
+	where EmployeeID = (
+		select EmployeeID
+		from Employee
+			where FName = 'Bugs'
+			and LName = 'Bunny');
+
+--rollback;
+--commit;
+
+
+
+
+
+
+
+/*Simple Test 8: Deleting an Employee while the UserID still exists should FAIL*/
+begin transaction;
+select *
+	from Employee
+	where EmployeeID = '020000000000';
+
+delete from Employee
+	where EmployeeID = '020000000000';
+
+select *
+	from Employee
+	where EmployeeID = '020000000000';
+--rollback;
+--commit;
+
+
+
+
+
+
+/* Simple Test 9: Find supplier names for parts specified in a work order*/
+	select SupplierName
+		from Suppliers
+			where SupplierID IN (
+				select SupplierID
+					from PartOrder
+						where Part_ID IN (
+							select Part_ID
+								from WorkOrderTasks
+									where WorkOrderNumber = '123603102151399'));
+
+
+
+
+
+
+/* Simple Test 10: Find a list of technicians who have worked for a particular resident */
+	select Fname, Lname
+		from Employee
+			where EmployeeID IN (
+				select TechniciansID
+					from technicians
+						where techniciansID in (
+							select technicianID
+								from workordertasks
+									where workordernumber IN (
+										select WorkOrderNumber
+											from WorkOrders
+												where PropertyID IN (
+													select PropertyID
+														from Properties
+															where PropertyID in (
+																select PropertyID
+																	from Residents
+																		where ResidentName = 'Eli')))));

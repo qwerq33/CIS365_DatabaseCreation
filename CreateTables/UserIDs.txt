@@ -1,0 +1,40 @@
+create table UserIDs(
+
+EmployeeID    		char(12),
+UserID        		char(12) 	not null,
+Password    		char(30) 	not null,
+CreatedOnDate   	date 		not null,
+RetiredOnDate   	date,
+primary key (EmployeeID),
+foreign key (EmployeeID) references Employee(EmployeeID));
+
+Insert into UserIDs values('010000000000', '134111183499','IamtheKing','1-Jan-16', NULL);
+Insert into UserIDs values('020000000000', '188092397399','amet','3-Feb-16', NULL);
+Insert into UserIDs values('030000000000', '180100700999','egestas','17-May-16', NULL);
+Insert into UserIDs values('040000000000', '136121797299','Cras','11-May-16', NULL);
+Insert into UserIDs values('050000000000', '192061363099','Bonjour','13-Dec-16', NULL);
+Insert into UserIDs values('060000000000', '134091636599','Duis','25-Mar-15', NULL);
+Insert into UserIDs values('070000000000', '118101003299','orci,','29-Jun-15', NULL);
+Insert into UserIDs values('080000000000', '109090644699','atmosphere','20-Oct-15', NULL);
+Insert into UserIDs values('090000000000', '141021888199','malesuada','28-Feb-15', NULL);
+Insert into UserIDs values('100000000000', '172081948299','ArizonaState','25-Feb-15', NULL);
+Insert into UserIDs values('110000000000', '135041382199','pharetra.','22-Feb-16', NULL);
+Insert into UserIDs values('120000000000', '117061493299','libero.','16-Aug-15', NULL);
+Insert into UserIDs values('130000000000', '123011963399','SlowTurtle','3-Oct-16', NULL);
+Insert into UserIDs values('140000000000', '127041628199','ILoveMyDog','3-Jul-15', NULL);
+Insert into UserIDs values('150000000000', '195060297899','arcu.','11-Feb-16', NULL);
+Insert into UserIDs values('160000000000', '189102502399','PasswordMaster','1-Jan-15', NULL);
+Insert into UserIDs values('170000000000', '176051185599','ILovePizza','22-Aug-15', NULL);
+Insert into UserIDs values('180000000000', '128112579399','Aliquam','9-Feb-16', NULL);
+Insert into UserIDs values('190000000000', '117081965399','enim,','1-Jun-15', NULL);
+Insert into UserIDs values('200000000000', '144081714999','tellus.','25-Jun-16', NULL);
+Insert into UserIDs values('210000000000', '189080360299','Panther,','1-Aug-16', NULL);
+Insert into UserIDs values('220000000000', '100031255799','tortor.','8-Nov-16', NULL);
+Insert into UserIDs values('230000000000', '182100641699','FordRaptor','18-Jun-16', NULL);
+Insert into UserIDs values('240000000000', '164023063699','congue','13-Nov-15', NULL);
+Insert into UserIDs values('250000000000', '176121958899','aliquet','29-Dec-16', NULL);
+Insert into UserIDs values('260000000000', '153010211799','Hollywood','20-May-16', NULL);
+Insert into UserIDs values('270000000000', '154060134399','DisneyLand,','11-Jul-16', NULL);
+Insert into UserIDs values('280000000000', '195050541799','ipsum','13-Oct-15', NULL);
+Insert into UserIDs values('290000000000', '156040141499','conubia','20-May-16', NULL);
+Insert into UserIDs values('300000000000', '145120869599','IloveArizona','22-Oct-15', NULL);

@@ -1,0 +1,20 @@
+create table OfficePersonnel(
+
+OPID				char(12),
+HrsWorkedPerWeek		varchar(2)	NOT NULL,
+Primary Key(OPID));
+
+insert into OfficePersonnel values('010000000000', '40');
+insert into OfficePersonnel values('020000000000', '42');
+insert into OfficePersonnel values('030000000000', '31');
+insert into OfficePersonnel values('040000000000', '40');
+insert into OfficePersonnel values('050000000000', '32');
+insert into OfficePersonnel values('060000000000', '40');
+insert into OfficePersonnel values('070000000000', '38');
+insert into OfficePersonnel values('080000000000', '38');
+insert into OfficePersonnel values('090000000000', '39');
+insert into OfficePersonnel values('100000000000', '25');
+insert into OfficePersonnel values('120000000000', '29');
+insert into OfficePersonnel values('130000000000', '40');
+insert into OfficePersonnel values('140000000000', '40');
+insert into OfficePersonnel values('150000000000', '40');

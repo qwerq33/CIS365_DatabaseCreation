@@ -1,0 +1,42 @@
+create table residents(
+
+PropertyID        	char(12),
+ResidentID        	char(12),
+ResidentName  		varchar(25) 		not null,
+ResidentPhone    	char(10)		not null,
+ResidentEmail    	varchar(50),
+primary key(PropertyID, ResidentID),
+foreign key(PropertyID) references properties(PropertyID));
+
+
+insert into residents values('694081180199','001000000000','Tyler','2512844887','tswizzle@gmail.com');
+insert into residents values('632092116299','002000000000','Eli','2014723947','eellii@yahoo.com');
+insert into residents values('681012517899','003000000000','Jacob','2056654716','jazzyjake@hotmail.com');
+insert into residents values('630021780899','004000000000','John','2812866597','JohnJohn@gmail.com');
+insert into residents values('653060319299','005000000000','Shea','7544842694','SheaButter@ymail.com');
+insert into residents values('664041507699','006000000000','Emily','7159521835','excitedEm@hotmail.com');
+insert into residents values('627030423299','007000000000','Dave','3392441430','DaveyD@osu.edu');
+insert into residents values('656102409899','008000000000','David','4246662073','TheRealDavid@gmail.com');
+insert into residents values('646070820099','009000000000','Mike','4024286724','mike123mike@yahoo.com');
+insert into residents values('690091823299','010000000000','Cooper','6613167957','cooperscooper@hotmail.com');
+insert into residents values('693102747199','011000000000','Carly','2543828363','carleyfries@email.ohio.edu');
+insert into residents values('698022955199','012000000000','Brett','6415867808','BretterCheddar@hotmail.com');
+insert into residents values('631050438899','013000000000','Casey','3023204497','CaseyAndPoint@gmail.com');
+insert into residents values('658011261999','014000000000','Austin','7753533007','lostinaustin@gmail.com');
+insert into residents values('619071977799','015000000000','Rachel','4047028830','rachrachrach@hotmail.com');
+
+insert into residents values('637041987099','016000000000','Gabe','6824015756','greatgabe@ymail.com');
+insert into residents values('666030855999','017000000000','Seth','3233948972','SethyBoy@hotmail.com');
+insert into residents values('687021937799','018000000000','Clint','6615573885','squintinclinton@hotmail.com');
+insert into residents values('610050484899','019000000000','Kimberly','3232211420','callmekim@gmail.com');
+insert into residents values('660071765799','020000000000','Grayson','7692063077','graywb@osu.edu');
+insert into residents values('644021847799','021000000000','Steph','3089098612','setphanyisme@hotmail.com');
+insert into residents values('693090916599','022000000000','Nora','3343056156','NoraSnora@gmail.com');
+insert into residents values('636062181399','023000000000','Griffin','7063008105','griffingrease@yahoo.com');
+insert into residents values('628030446199','024000000000','Mara','5742373570','MaraStara@gmail.com');
+insert into residents values('631102398799','025000000000','Lynn','4105605939','LynnWynn@osu.edu');
+insert into residents values('682022775799','026000000000','Lacey','2143686177','HiImLacey@hotmail.com');
+insert into residents values('660010800099','027000000000','Thomas','3604738981','thomasthetrain@hotmailcom');
+insert into residents values('619072530599','028000000000','Ryan','3372326143','ryan447@gmail.com');
+insert into residents values('614030371099','029000000000','Caitlyn','3173443544','CaitlynGreatlyn@email.ohio.edu');
+insert into residents values('625602738869','030000000000','Brady','6195537025','ILoveTomBrady@gmail.com');

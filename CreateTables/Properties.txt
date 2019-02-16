@@ -1,0 +1,49 @@
+create table properties(
+
+PropertyID        	char(12) 	not null 	unique,
+PropertyName   		varchar(50),
+PropertyAddress     	varchar(25)   	not null,
+PropertyCity    	varchar(15) 	not null,
+PropertyState    	varchar(2) 	not null,
+PropertyZIP        	char(5) 	not null,
+PropertyManager    	varchar(35) 	not null,
+Phone            	char(10) 	not null,
+AccountNo        	varchar(15),
+TechOnProperty    	varchar(255),
+primary key(PropertyID));
+
+insert into properties values('694081180199','Old Kent Road','9434 S. Oxford Lane','Columbus','OH','43004','Jeff Bezos','4236471514',NULL,NULL);
+insert into properties values('632092116299','Whitechapel Road','320 Kingston St.','Columbus','OH','43016','Bill Gates','2107892979',NULL,NULL);
+insert into properties values('681012517899','The Angel Islington','124 Leatherwood Court','Colombus','OH','43035','Warren Buffet','4076929211',NULL,NULL);
+insert into properties values('630021780899','Euston Road','92 Whitemarsh Street','Cleveland','OH','44101','Bernard Arnault','7724609293',NULL,NULL);
+insert into properties values('653060319299','Pentonville Road','698 Greystone Street','Cleveland','OH','44111','Mark Zuckerberg','4148779211',NULL,NULL);
+insert into properties values('664041507699','Pall Mall','78 Holly St.','Cleveland','OH','44144','Amancio Ortega','4179329796',NULL,NULL);
+insert into properties values('627030423299','Whitehall','418 North Bury Street','Cincinnati','OH','41073','Carlos Slim Helu','3214415739',NULL,NULL);
+insert into properties values('656102409899','Northumberland Avenue','94 Fairground Dr.','Cincinnati','OH','45203','Charles Koch','8188828850',NULL,NULL);
+insert into properties values('646070820099','Bow Street','7 Saxton St.','Cincinnati','OH','45229','David Koch','6066742532',NULL,NULL);
+insert into properties values('693102747199','Vine Street','770 Wayne Lane','Toledo','OH','43460','Larry Ellison','6363833868',NULL,NULL);
+insert into properties values('698022955199','The Strand','7494 Ridge St.','Toledo','OH','43614','Michael Bloomberg','6267095409',NULL,NULL);
+insert into properties values('631050438899','Fleet Street','7350 Union St.','Toledo','OH','43620','Larry Page','3345241208',NULL,NULL);
+insert into properties values('658011261999','Trafalgar Square','7746 Marconi Dr.','Akron','OH','44223','Sergey Brin','6205496494',NULL,NULL);
+insert into properties values('619071977799','Leicester Square','45 Airport Road','Akron','OH','44312','Jim Walton','3308517997',NULL,NULL);
+insert into properties values('690091823299','Marlborough Street','9240 Dunbar Ave.','Akron','OH','44315','S. Robson Walton','6303355741',NULL,NULL);
+
+insert into properties values('637041987099','Coventry Street','4905 Jefferson St','Dayton','OH','45377','Alice Walton','3106663485',NULL,NULL);
+insert into properties values('666030855999','Piccadilly','4244 Garfield st','Dayton','OH','45410','Ma Huateng','5097733605',NULL,NULL);
+insert into properties values('687021937799','Regent Street','421 Jordan st','Dayton','OH','45479','Francoise Bettencourt Meyers','4407629946',NULL,NULL);
+insert into properties values('610050484899','Oxford Street','487 Jacksonville Lane','Parma','OH','44129','Mukesh Ambani','3018634977',NULL,NULL);
+insert into properties values('660071765799','Bond Street','2487 Pierce Dr.','Parma','OH','44130','Jack Ma','7276926774',NULL,NULL);
+insert into properties values('644021847799','Park Lane','79 Tory Lane','Parma','OH','44134','Sheldon Adelson','3479154312',NULL,NULL);
+insert into properties values('693090916599','Mayfair','4876 Central','Canton','OH','44701','Steve Ballmer','5182416838',NULL,NULL);
+insert into properties values('636062181399','Kings Cross Station','4738 Fair Dr.','Canton','OH','44714','Li Ka-shing','7075086407',NULL,NULL);
+insert into properties values('628030446199','Marylebone Station','856 Porter St','Canton','OH','44799','Hui Ka Yan','4702936683',NULL,NULL);
+insert into properties values('631102398799','Fenchurch Street Station','6217 Berry Lane','Youngstown','OH','44405','Lee Shau Kee','6152214076',NULL,NULL);
+insert into properties values('682022775799','Liverpool Street Station','546 Roosevelt St','Youngstown','OH','44507','Wang Jianlin','7753936196',NULL,NULL);
+insert into properties values('660010800099','Electric Company','4530 E Filmore St','Youngstown','OH','44555','Beate Heister','6468793467',NULL,NULL);
+insert into properties values('619072530599','Water Works','3526 W Mcdowell Rd','Lorain','OH','44052','Phil Knight','5134556643',NULL,NULL);
+insert into properties values('614030371099','Breezehome','5532 CamelBack Rd','Lorain','OH','44053','Jorge Paulo Lemann','6847319197',NULL,NULL);
+insert into properties values('625602738869','Honeyside','5835 ThunderBird St','Lorain','OH','44055','Francois Pinault','4063987290',NULL,NULL);
+
+
+
+

@@ -1,0 +1,74 @@
+create table AssetOrder(
+
+AssetOrderNumber	char(12)	NOT NULL,	
+SupplierID		char(12)	NOT NULL,
+AssetID			char(12)	NOT NULL,
+OrderDate		date		NOT NULL,
+DeliveryRating		varchar(7)	NOT NULL,
+Primary Key (AssetOrderNumber),
+Foreign Key (SupplierID) REFERENCES Suppliers(SupplierID),
+Foreign Key (AssetID) REFERENCES Assets(AssetID));
+
+insert into AssetOrder values('287349396812', '000000000001', '000000000030', '03-Dec-2018', 'Damaged');
+insert into AssetOrder values('481592365512', '000000000002', '000000000029', '17-Jan-2017', 'Late');
+insert into AssetOrder values('281009083112', '000000000004', '000000000028', '24-Sep-2018', 'On-Time');
+insert into AssetOrder values('260231647412', '000000000005', '000000000027', '27-Mar-2017', 'Late');
+insert into AssetOrder values('192055555212', '000000000007', '000000000026', '16-Jun-2018', 'On-Time');
+insert into AssetOrder values('970363443512', '000000000008', '000000000025', '10-Jul-2017', 'On-Time');
+insert into AssetOrder values('523314212012', '000000000009', '000000000024', '12-Feb-2018', 'On-Time');
+insert into AssetOrder values('824469220012', '000000000010', '000000000023', '05-Feb-2018', 'Late');
+insert into AssetOrder values('098162671812', '000000000011', '000000000022', '21-Apr-2017', 'Late');
+insert into AssetOrder values('533249523412', '000000000012', '000000000021', '18-Sep-2017', 'Damaged');
+insert into AssetOrder values('745377921912', '000000000013', '000000000020', '30-Nov-2018', 'Damaged');
+insert into AssetOrder values('102905815612', '000000000014', '000000000019', '30-Jan-2018', 'Late');
+insert into AssetOrder values('397441322712', '000000000015', '000000000018', '02-Apr-2017', 'Damaged');
+insert into AssetOrder values('817347671312', '000000000016', '000000000017', '17-Jun-2017', 'Late');
+insert into AssetOrder values('017339209112', '000000000017', '000000000015', '23-Oct-2018', 'Damaged');
+
+insert into AssetOrder values('201720104912', '000000000018', '000000000014', '06-Jul-2017', 'Late');
+insert into AssetOrder values('989932019112', '000000000019', '000000000013', '27-Dec-2017', 'Late');
+insert into AssetOrder values('095201144912', '000000000020', '000000000012', '23-Aug-2018', 'On-Time');
+insert into AssetOrder values('448978937012', '000000000023', '000000000011', '03-Jan-2017', 'On-Time');
+insert into AssetOrder values('449007409812', '000000000026', '000000000010', '27-Apr-2018', 'On-Time');
+insert into AssetOrder values('441210077012', '000000000027', '000000000009', '03-Mar-2017', 'Late');
+insert into AssetOrder values('442537792812', '000000000029', '000000000008', '26-Mar-2017', 'Damaged');
+insert into AssetOrder values('443787763512', '000000000013', '000000000020', '07-Nov-2017', 'On-Time');
+insert into AssetOrder values('495221641412', '000000000007', '000000000026', '20-Feb-2018', 'Damaged');
+insert into AssetOrder values('446361021012', '000000000004', '000000000028', '23-Feb-2018', 'On-Time');
+insert into AssetOrder values('447182954912', '000000000012', '000000000021', '20-Nov-2018', 'On-Time');
+insert into AssetOrder values('332158745412', '000000000023', '000000000011', '04-Feb-2018', 'On-Time');
+insert into AssetOrder values('331070882112', '000000000013', '000000000020', '27-Dec-2018', 'On-Time');
+insert into AssetOrder values('333888238412', '000000000007', '000000000026', '06-Dec-2017', 'Damaged');
+insert into AssetOrder values('334736238012', '000000000004', '000000000028', '23-Apr-2018', 'Late');
+
+insert into AssetOrder values('335349396812', '000000000001', '000000000030', '03-Oct-2018', 'Damaged');
+insert into AssetOrder values('336592365512', '000000000002', '000000000029', '17-Feb-2017', 'Late');
+insert into AssetOrder values('337009083112', '000000000004', '000000000028', '24-Jan-2018', 'On-Time');
+insert into AssetOrder values('338231647412', '000000000005', '000000000027', '27-Apr-2017', 'Late');
+insert into AssetOrder values('339055555212', '000000000007', '000000000026', '16-Mar-2018', 'On-Time');
+insert into AssetOrder values('221363443512', '000000000008', '000000000025', '10-jun-2017', 'On-Time');
+insert into AssetOrder values('222314212012', '000000000009', '000000000024', '12-jul-2018', 'On-Time');
+insert into AssetOrder values('223469220012', '000000000010', '000000000023', '05-Aug-2017', 'Late');
+insert into AssetOrder values('224162671812', '000000000011', '000000000022', '21-Sep-2018', 'Late');
+insert into AssetOrder values('225249523412', '000000000012', '000000000021', '18-Oct-2017', 'Damaged');
+insert into AssetOrder values('226377921912', '000000000013', '000000000020', '30-Dec-2018', 'Damaged');
+insert into AssetOrder values('227905815612', '000000000014', '000000000019', '30-Nov-2018', 'Late');
+insert into AssetOrder values('228441322712', '000000000015', '000000000018', '02-Jan-2017', 'Damaged');
+insert into AssetOrder values('229347671312', '000000000016', '000000000017', '17-Feb-2017', 'Late');
+insert into AssetOrder values('559339209112', '000000000017', '000000000015', '23-Mar-2018', 'Damaged');
+
+insert into AssetOrder values('232220104912', '000000000018', '000000000014', '06-Apr-2017', 'Late');
+insert into AssetOrder values('989931416112', '000000000019', '000000000013', '27-Mar-2017', 'Late');
+insert into AssetOrder values('095769744912', '000000000020', '000000000012', '23-May-2018', 'On-Time');
+insert into AssetOrder values('396978937012', '000000000023', '000000000011', '03-May-2017', 'On-Time');
+insert into AssetOrder values('964007409812', '000000000026', '000000000010', '27-Jun-2018', 'On-Time');
+insert into AssetOrder values('624210077012', '000000000027', '000000000009', '03-Jun-2017', 'Late');
+insert into AssetOrder values('154537792812', '000000000029', '000000000008', '26-Jul-2017', 'Damaged');
+insert into AssetOrder values('444787763512', '000000000013', '000000000020', '07-Aug-2017', 'On-Time');
+insert into AssetOrder values('496221641412', '000000000007', '000000000026', '20-Aug-2018', 'Damaged');
+insert into AssetOrder values('208361021012', '000000000004', '000000000028', '23-Sep-2018', 'On-Time');
+insert into AssetOrder values('778182954912', '000000000012', '000000000021', '20-sep-2018', 'On-Time');
+insert into AssetOrder values('973158745412', '000000000023', '000000000011', '04-Nov-2018', 'On-Time');
+insert into AssetOrder values('155070882112', '000000000013', '000000000020', '27-Nov-2018', 'On-Time');
+insert into AssetOrder values('921888238412', '000000000007', '000000000026', '06-Jan-2017', 'Damaged');
+insert into AssetOrder values('328736238012', '000000000004', '000000000028', '23-Dec-2018', 'Late');
